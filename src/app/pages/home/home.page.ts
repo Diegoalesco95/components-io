@@ -53,6 +53,11 @@ export class HomePage implements OnInit {
       name: 'Floating Action Button',
       redirectTo: '/fab',
     },
+    {
+      icon: 'cube-outline',
+      name: 'Grid',
+      redirectTo: '/grid',
+    },
   ];
 
   constructor() {}
