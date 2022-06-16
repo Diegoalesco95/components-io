@@ -7,6 +7,13 @@
         color="primary"
       ></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-capitalize">{{ title }}</ion-title>
+    <ion-title color="primary" class="ion-text-capitalize">{{
+      title
+    }}</ion-title>
+    <ion-buttons slot="end" *ngIf="withAvatar === true">
+      <ion-avatar>
+        <ion-img src="/assets/stan-lee.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>

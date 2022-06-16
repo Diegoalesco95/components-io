@@ -23,6 +23,11 @@ export class HomePage implements OnInit {
       name: 'Alert',
       redirectTo: '/alert',
     },
+    {
+      icon: 'person-circle-outline',
+      name: 'Avatar',
+      redirectTo: '/avatar',
+    },
   ];
 
   constructor() {}
