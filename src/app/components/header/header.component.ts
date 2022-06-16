@@ -6,10 +6,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  isFavorite: boolean = false;
+
   @Input() title: string;
   @Input() withAvatar = false;
+  @Input() withButton = false;
 
   constructor() {}
 
   ngOnInit() {}
+
+  onClick() {
+    this.isFavorite = !this.isFavorite;
+  }
 }

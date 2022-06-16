@@ -10,7 +10,17 @@
     <ion-title color="primary" class="ion-text-capitalize">{{
       title
     }}</ion-title>
-    <ion-buttons slot="end" *ngIf="withAvatar === true">
+
+    <ion-buttons slot="end" *ngIf="withButton">
+      <ion-button (click)="onClick()" color="danger">
+        <ion-icon
+          slot="icon-only"
+          [name]="isFavorite ? 'heart' : 'heart-outline'"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" *ngIf="withAvatar">
       <ion-avatar>
         <ion-img src="/assets/stan-lee.jpg"></ion-img>
       </ion-avatar>
