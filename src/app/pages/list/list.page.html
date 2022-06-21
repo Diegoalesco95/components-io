@@ -1,0 +1,48 @@
+<app-header title="List"></app-header>
+
+<ion-content>
+  <ion-title>Contact List</ion-title>
+
+  <ion-list>
+    <ion-reorder-group
+      (ionItemReorder)="doReorder($event)"
+      [disabled]="!canReorder"
+    >
+      <ion-item-sliding *ngFor="let user of users ">
+        <ion-item-options side="start">
+          <ion-item-option color="danger" (click)="delete(user)">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item>
+          <ion-label>
+            <h3>{{user.name}}</h3>
+            <p>{{user.email}}</p>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-end text-small"
+            >{{user.phone}}</ion-label
+          >
+          <ion-reorder slot="end">
+            <ion-icon name="reorder-three-outline"></ion-icon>
+          </ion-reorder>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option (click)="favorite(user)">
+            <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="secondary" (click)="share(user)">
+            <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-reorder-group>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" (click)="toggleReorder()">
+      <ion-icon name="reorder-three-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

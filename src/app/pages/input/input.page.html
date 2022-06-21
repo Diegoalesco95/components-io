@@ -1,0 +1,78 @@
+<app-header title="Input"></app-header>
+
+<ion-content class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="!showData">
+    <ion-list-header>
+      <ion-label>Valid Inputs: {{form.valid}}</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Name:</ion-label>
+      <ion-input
+        name="name"
+        type="text"
+        placeholder="Enter your name"
+        required
+        [(ngModel)]="user.name"
+      ></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Phone:</ion-label>
+        <ion-input
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+          type="tel"
+          [(ngModel)]="user.phone"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label>Birthdate:</ion-label>
+      <ion-input
+        name="birthdate"
+        placeholder="Enter your birthdate"
+        required
+        type="date"
+        [(ngModel)]="user.birthdate"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input
+        name="email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        placeholder="Enter your email"
+        required
+        type="email"
+        [(ngModel)]="user.email"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input
+        name="password"
+        placeholder="Enter your password"
+        required
+        type="password"
+        [(ngModel)]="user.password"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button [disabled]="form.invalid" expand="block" type="submit">
+      Save
+    </ion-button>
+  </form>
+
+  <ion-list *ngIf="showData">
+    <ion-item *ngFor="let value of user | keyvalue  ">
+      <ion-label>{{value.key | titlecase}}: {{user[value.key]}}</ion-label>
+    </ion-item>
+    <ion-button (click)="onReset()" expand="block"> Reset </ion-button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text="Back"
+        color="primary"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary" class="ion-text-capitalize">{{
+      title
+    }}</ion-title>
+
+    <ion-buttons slot="end" *ngIf="withButton">
+      <ion-button (click)="onClick()" color="danger">
+        <ion-icon
+          slot="icon-only"
+          [name]="isFavorite ? 'heart' : 'heart-outline'"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" *ngIf="withAvatar">
+      <ion-avatar>
+        <ion-img src="/assets/stan-lee.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

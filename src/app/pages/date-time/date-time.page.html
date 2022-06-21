@@ -1,0 +1,21 @@
+<app-header title="Date / Time"></app-header>
+
+<ion-content class="ion-padding-start ion-padding-end">
+  <div class="grid">
+    <div class="grid-item">
+      <ion-text color="primary">
+        <h2>Initial Value</h2>
+      </ion-text>
+      <ion-text>
+        <p>{{ birthday | date: 'MMM d, yyyy' }}</p>
+      </ion-text>
+      <ion-datetime
+        [value]="birthday.toISOString()"
+        min="2020-01-01"
+        max="2025-12-31"
+        (ionChange)="onChangeDate($event)"
+      >
+      </ion-datetime>
+    </div>
+  </div>
+</ion-content>
