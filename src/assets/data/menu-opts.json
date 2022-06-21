@@ -73,5 +73,10 @@
     "icon": "albums-outline",
     "name": "Modal",
     "redirectTo": "/modal"
+  },
+  {
+    "icon": "chatbox-outline",
+    "name": "Popover",
+    "redirectTo": "/popover"
   }
 ]
