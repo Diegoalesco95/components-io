@@ -108,5 +108,10 @@
     "icon": "bookmark-outline",
     "name": "Tabs",
     "redirectTo": "/tabs"
+  },
+  {
+    "icon": "bulb-outline",
+    "name": "Toast",
+    "redirectTo": "/toast"
   }
 ]
