@@ -78,5 +78,10 @@
     "icon": "chatbox-outline",
     "name": "Popover",
     "redirectTo": "/popover"
+  },
+  {
+    "icon": "battery-half-outline",
+    "name": "Progress",
+    "redirectTo": "/progress"
   }
 ]
