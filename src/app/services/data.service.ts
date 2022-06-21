@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IComponent } from 'src/app/interfaces/interfaces';
+import { IAlbum, IComponent } from 'src/app/interfaces/interfaces';
 @Injectable({
   providedIn: 'root',
 })
@@ -13,5 +13,11 @@ export class DataService {
 
   getMenuOpts() {
     return this.http.get<IComponent[]>('/assets/data/menu-opts.json');
+  }
+
+  getAlbums() {
+    return this.http.get<IAlbum[]>(
+      'https://jsonplaceholder.typicode.com/albums'
+    );
   }
 }

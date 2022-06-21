@@ -29,3 +29,7 @@
 .red-button .sc-ion-action-sheet-md {
   color: var(--ion-color-danger) !important;
 }
+
+ion-searchbar {
+  --box-shadow: none !important;
+}
