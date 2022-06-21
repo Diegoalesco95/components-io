@@ -68,5 +68,10 @@
     "icon": "menu-outline",
     "name": "Menu",
     "redirectTo": "/menu"
+  },
+  {
+    "icon": "albums-outline",
+    "name": "Modal",
+    "redirectTo": "/modal"
   }
 ]
