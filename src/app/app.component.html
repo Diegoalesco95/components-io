@@ -1,21 +1,26 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="custom">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Components</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle *ngFor="let c of components | async">
-          <ion-item detail [routerLink]="c.redirectTo">
-            <ion-icon color="primary" [name]="c.icon" slot="start"></ion-icon>
-            <ion-label>{{ c.name }}</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
+  <ion-split-pane contentId="custom" when="md">
+    <ion-menu side="start" menuId="first" contentId="custom">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Components</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle
+            *ngFor="let c of components | async"
+            autoHide="false"
+          >
+            <ion-item detail [routerLink]="c.redirectTo">
+              <ion-icon color="primary" [name]="c.icon" slot="start"></ion-icon>
+              <ion-label>{{ c.name }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
 
-  <ion-router-outlet id="custom"></ion-router-outlet>
+    <ion-router-outlet id="custom"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
