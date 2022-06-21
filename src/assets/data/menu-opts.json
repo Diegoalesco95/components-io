@@ -93,5 +93,10 @@
     "icon": "search-outline",
     "name": "Search Bar",
     "redirectTo": "/searchbar"
+  },
+  {
+    "icon": "tablet-landscape-outline",
+    "name": "Segment",
+    "redirectTo": "/segment"
   }
 ]

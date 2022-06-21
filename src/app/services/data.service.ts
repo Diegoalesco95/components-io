@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IAlbum, IComponent } from 'src/app/interfaces/interfaces';
+import { IAlbum, IComponent, IHeroes } from 'src/app/interfaces/interfaces';
+import { delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,5 +20,11 @@ export class DataService {
     return this.http.get<IAlbum[]>(
       'https://jsonplaceholder.typicode.com/albums'
     );
+  }
+
+  getHeroes() {
+    return this.http
+      .get<IHeroes[]>('/assets/data/superheroes.json')
+      .pipe(delay(1500));
   }
 }

@@ -9,3 +9,11 @@ export interface IAlbum {
   id: number;
   title: string;
 }
+
+export interface IHeroes {
+  superhero: string;
+  publisher: string;
+  alter_ego: string;
+  first_appearance: string;
+  characters: string;
+}
