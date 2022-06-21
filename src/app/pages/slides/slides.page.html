@@ -1,0 +1,17 @@
+<app-header title="Slides"></app-header>
+
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide class="slide-1" *ngFor="let slide of slides">
+      <ion-card>
+        <img [src]="slide.src" [alt]="slide.title" />
+        <ion-card-header>
+          <ion-card-title>{{slide.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{slide.description}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
